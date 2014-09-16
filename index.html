@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to D3.js</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to D3.js">
+  <meta name="author" content="Chen Long">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/solarized_light.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="./assets/css/app.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Introduction to D3.js</h1>
+    <h2>More than &quot;A JavaScript visualization library for HTML and SVG&quot;</h2>
+    <p>Chen Long<br/>National Engineering Research Center for Software Engineering</p>
+  </hgroup>
+    <a href="https://github.com/milkfan/D3Introduction/zipball/gh-pages" class="example">
+     Download
+    </a>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="dark nobackground quote" id="slide-1" style="background:;">
+  <article data-timings="">
+    <p><q> <strong>D3.js</strong> (<a href="http://d3js.org/">Data-Driven Documents</a>) is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation. </q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>D3 Gallery</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://github.com/mbostock/d3/wiki/Gallery#visual-index">https://github.com/mbostock/d3/wiki/Gallery#visual-index</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Streamgraph</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/html/Streamgraph.html' width = '800px' height = '250px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p>For continuous data such as time series, a streamgraph can be used in place of stacked bars. This example also demonstrates path transitions to interpolate between different layouts. Streamgraph algorithm, colors, and data generation inspired by <a href="http://www.leebyron.com/else/streamgraph/">Byron and Wattenberg</a>.  </p>
+
+<p><a href="http://bl.ocks.org/mbostock/4060954">http://bl.ocks.org/mbostock/4060954</a></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Voronoi Tessellation</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/html/VoronoiTessellation.html' width = '960px' height = '600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p>The Voronoi tessellation shows the closest point on the plane for a given set of points. This example updates the Voronoi diagram in response to mouse interaction! Colors by Cynthia Brewer; algorithm by Steven Fortune; implementation based on work by Nicolas Garcia Belmonte; interaction inspired byRaymond Hill. </p>
+
+<p><a href="http://bl.ocks.org/mbostock/4060366">http://bl.ocks.org/mbostock/4060366</a></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Bubble Chart</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/html/BubbleChart.html' width = '960px' height = '600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p>Bubble charts encode data in the area of circles. Although less perceptually-accurate than bar charts, they can pack hundreds of values into a small space. Implementation based on work by Jeff Heer. Data shows the Flare class hierarchy, also courtesy Jeff Heer.  </p>
+
+<p><a href="http://bl.ocks.org/mbostock/4063269">http://bl.ocks.org/mbostock/4063269</a></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="span12" id="mycarouselslide" style="background:;">
+  <article data-timings="">
+    
+ 
+ <div id="mycarouselslide-carousel" class="carousel slide span12">
+   <!-- Indicators -->
+   <ol class="carousel-indicators">
+     <li data-target="#mycarouselslide-carousel" data-slide-to="1" class="active"></li>
+     <li data-target="#mycarouselslide-carousel" data-slide-to="2" class=""></li>
+     <li data-target="#mycarouselslide-carousel" data-slide-to="3" class=""></li>
+     <li data-target="#mycarouselslide-carousel" data-slide-to="4" class=""></li>
+   </ol>
+   <!-- Wrapper for slides -->
+   <div class="carousel-inner">
+     <div class="item active">
+       <img src="assets/img/ZoomableGeography.png" alt="">
+       <div class="carousel-caption"><p>Zoomable Geography  </p>
+
+<p><a href="http://bl.ocks.org/mbostock/2374239">http://bl.ocks.org/mbostock/2374239</a></p>
+</div>
+     </div>
+     <div class="item ">
+       <img src="assets/img/Choropleth.png" alt="">
+       <div class="carousel-caption"><p>This choropleth encodes unemployment rates from 2008 with a quantize scale ranging from 0 to 15%. Athreshold scale is a useful alternative for coloring arbitrary ranges.  </p>
+
+<p><a href="http://bl.ocks.org/mbostock/4060606">http://bl.ocks.org/mbostock/4060606</a></p>
+</div>
+     </div>
+     <div class="item ">
+       <img src="assets/img/WordCloud.png" alt="">
+       <div class="carousel-caption"><p><a href="http://www.jasondavies.com/wordcloud/#%2F%2Fwww.jasondavies.com%2Fwordtree%2Fcat-in-the-hat.txt">Word Cloud Generator</a></p>
+</div>
+     </div>
+     <div class="item ">
+       <img src="assets/img/CodeFlower.png" alt="">
+       <div class="carousel-caption"><p><a href="http://redotheweb.com/CodeFlower/">CodeFlower Source code visualization</a> visualizes source repositories using an interactive tree. Each disc represents a file, with a radius proportional to the number of lines of code (loc). </p>
+
+<style>
+#mycarouselslide img {
+  width: 800px;
+  height: 600px;
+}
+</style>
+</div>
+     </div>
+   </div>
+   <!-- Controls -->
+   <a class="left carousel-control" href="#mycarouselslide-carousel" data-slide="prev">&lsaquo;</a>
+   <a class="right carousel-control" href="#mycarouselslide-carousel" data-slide="next">&rsaquo;</a>
+ </div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Using Canvas and SVG to draw</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Canvas Demo</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>var mySmile = document.getElementById(&#39;mySmile&#39;);
+var smileCtx = mySmile.getContext(&#39;2d&#39;);
+var radgrad = smileCtx.createRadialGradient(100,100,10,100,100,100);  
+radgrad.addColorStop(.5, &#39;rgba(247,241,192,1)&#39;);  
+radgrad.addColorStop(1, &#39;rgba(244,225,56,1)&#39;);  
+// head
+smileCtx.beginPath();smileCtx.fillStyle = radgrad;smileCtx.arc(100,100,99,0,Math.PI*2);
+smileCtx.stroke();smileCtx.fill();
+// Mouth
+smileCtx.beginPath();smileCtx.moveTo(170,100);
+smileCtx.arc(100,100,70,0,Math.PI);smileCtx.stroke();
+// Left eye
+smileCtx.beginPath();smileCtx.fillStyle = &#39;black&#39;;smileCtx.moveTo(60, 65);
+smileCtx.arc(60,65,12,0,Math.PI*2);smileCtx.fill();
+// Right eye            
+smileCtx.beginPath();smileCtx.moveTo(140,65);
+smileCtx.arc(140,65,12,0,Math.PI*2);smileCtx.fill();
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <iframe src='assets/html/canvas.html' width = '200px' height = '200px' seamless></iframe>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>SVG Demo</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>&lt;svg version=&quot;1.1&quot;
+     baseProfile=&quot;full&quot;
+     xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;circle cx=&quot;300&quot; cy=&quot;164&quot; r=&quot;160&quot; fill=&quot;yellow&quot; stroke=&quot;black&quot; stroke-width=&quot;2&quot; /&gt;
+  &lt;circle cx=&quot;210&quot; cy=&quot;100&quot; r=&quot;20&quot; fill=&quot;black&quot; /&gt;
+  &lt;circle cx=&quot;380&quot; cy=&quot;100&quot; r=&quot;20&quot; fill=&quot;black&quot; /&gt;
+  &lt;clipPath id=&quot;MyClip&quot;&gt;
+    &lt;rect x=&quot;30&quot; y=&quot;200&quot; width=&quot;600&quot; height=&quot;100&quot; /&gt;
+  &lt;/clipPath&gt;
+  &lt;circle cx=&quot;300&quot; cy=&quot;160&quot; r=&quot;120&quot; fill-opacity=&quot;0&quot; stroke=&quot;black&quot; stroke-width=&quot;5&quot; 
+    clip-path=&quot;url(#MyClip)&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <iframe src='assets/html/svg.html' width = '960px' height = '600px' seamless></iframe>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="bigger" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Canvas V.S. SVG</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="http://msdn.microsoft.com/zh-cn/library/gg193983">Read more...</a></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>Canvas</h3>
+
+<ul class = "build incremental">
+<li> depends on resolution</li>
+<li> doesn&#39;t support DOM events</li>
+<li> weaker ability to render text</li>
+<li> can save image as .jpg or .png files</li>
+<li> most suitble for image-dense games in which lots of objects gets re-drawed</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>SVG</h3>
+
+<ul class = "build incremental">
+<li> independent of resolution (can be enlarged without comprise)</li>
+<li> supports DOM events</li>
+<li> more complexity will slow down web response time</li>
+<li> suitable for large rendering area such as Google Map</li>
+<li> cannot save as image files</li>
+<li> doesn&#39;t suit games</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Basic SVG</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><h3>Scalable Vector Graphics has been around for more than a decade.</h3></li>
+<li><h3>It is a XML-based and text-based image format. Each SVG image is defined using markup code similar to HTML, and SVG code can be included within any HTML document, or inserted dynamically into the DOM.</h3></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Elements</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><h3>The SVG element</h3>
+
+<p>Before you can draw anything, you must create an SVG element. Think of the SVG element as a canvas on which your visuals are rendered. (In that respect, SVG is conceptually similar to HTML’s canvas element.) </p></li>
+<li><h3>Simple Shapes</h3>
+
+<p>There are a number of visual elements that you can include between those svg tags, including <code>rect</code>, <code>circle</code>, <code>ellipse</code>, <code>line</code>, <code>text</code>, and <code>path</code>.</p></li>
+<li><h3>Coordinates</h3>
+
+<p>If you’re familiar with computer graphics programming, you’ll recognize the usual pixel-based coordinates system in which 0,0 is the top-left corner of the drawing space. </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p><svg width="505" height="65">
+    <line x1="5" y1="5" x2="5" y2="50" stroke="gray" stroke-width="1"></line>
+    <line x1="5" y1="50" x2="0" y2="45" stroke="gray" stroke-width="1"></line>
+    <line x1="5" y1="50" x2="10" y2="45" stroke="gray" stroke-width="1"></line>
+    <line x1="5" y1="5" x2="500" y2="5" stroke="gray" stroke-width="1"></line>
+    <line x1="500" y1="5" x2="495" y2="0" stroke="gray" stroke-width="1"></line>
+    <line x1="500" y1="5" x2="495" y2="10" stroke="gray" stroke-width="1"></line>
+    <circle cx="5" cy="5" r="3" fill="#008"></circle>
+    <text x="10" y="20">0,0</text>
+    <circle cx="105" cy="25" r="3" fill="#008"></circle>
+    <text x="110" y="40">100,20</text>
+    <circle cx="205" cy="45" r="3" fill="#008"></circle>
+    <text x="210" y="60">200,40</text>
+</svg></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Simple Shapes</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>rectangle</h3>
+
+<pre><code class="html">&lt;rect x=&quot;0&quot; y=&quot;0&quot; width=&quot;500&quot; height=&quot;50&quot;/&gt;
+</code></pre>
+
+<p><svg width="500" height="50">
+    <rect x="0" y="0" width="500" height="50"></rect>
+</svg></p>
+
+<h3>circle</h3>
+
+<pre><code class="html">&lt;circle cx=&quot;250&quot; cy=&quot;25&quot; r=&quot;25&quot;/&gt;
+</code></pre>
+
+<p><svg width="500" height="50">
+    <circle cx="250" cy="25" r="25"></circle>
+</svg></p>
+
+<h3>ellipse</h3>
+
+<pre><code class="html">&lt;ellipse cx=&quot;250&quot; cy=&quot;25&quot; rx=&quot;100&quot; ry=&quot;25&quot;/&gt;
+</code></pre>
+
+<p><svg width="500" height="50">
+    <ellipse cx="250" cy="25" rx="100" ry="25"></ellipse>
+</svg></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h3>line</h3>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="html">&lt;line x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;500&quot; y2=&quot;50&quot; stroke=&quot;black&quot;/&gt;
+</code></pre>
+
+<p><svg width="500" height="50">
+    <line x1="0" y1="0" x2="500" y2="50" stroke="black"></line>
+</svg></p>
+
+<h3>text</h3>
+
+<pre><code class="html">&lt;text x=&quot;250&quot; y=&quot;25&quot; font-family=&quot;sans-serif&quot;
+ font-size=&quot;25&quot; fill=&quot;gray&quot;&gt;Easy-peasy&lt;/text&gt;
+</code></pre>
+
+<p><svg width="500" height="50">
+    <text x="250" y="25" font-family="sans-serif" font-size="25" fill="gray">Easy-peasy</text>
+</svg></p>
+
+<h3>path</h3>
+
+<blockquote>
+<p>path is for drawing anything more complex than the shapes above (like country outlines for geomaps)</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Styling SVG Elements</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><code>fill</code> -- A color value. Just as with CSS, colors can be specified as
+
+<ul>
+<li>named colors -- orange</li>
+<li>hex values -- #3388aa or #38a</li>
+<li>RGB values -- rgb(10, 150, 20)</li>
+<li>RGB with alpha transparency -- rgba(10, 150, 20, 0.5)</li>
+</ul></li>
+<li><code>stroke</code> -- A color value.</li>
+<li><code>stroke-width</code> -- A numeric measurement (typically in pixels).</li>
+<li><code>opacity</code> -- A numeric value between 0.0 (completely transparent) and 1.0 (completely opaque).</li>
+</ul>
+
+<p></br></p>
+
+<blockquote>
+<p>For more on SVG -- including paths, clip-paths, masks, and filters -- see <a href="http://www.w3.org/Graphics/SVG/IG/resources/svgprimer.html">&quot;An SVG Primer for Today’s Browsers&quot;</a> by David Dailey.</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <pre><code class="html">&lt;circle cx=&quot;25&quot; cy=&quot;25&quot; r=&quot;20&quot; fill=&quot;purple&quot; 
+        stroke=&quot;green&quot; stroke-width=&quot;10&quot;
+        opacity=&quot;0.9&quot;/&gt;
+&lt;circle cx=&quot;65&quot; cy=&quot;25&quot; r=&quot;20&quot; fill=&quot;green&quot;
+        stroke=&quot;blue&quot; stroke-width=&quot;10&quot;
+        opacity=&quot;0.5&quot;/&gt;
+&lt;circle cx=&quot;105&quot; cy=&quot;25&quot; r=&quot;20&quot; fill=&quot;yellow&quot;
+        stroke=&quot;red&quot; stroke-width=&quot;10&quot;
+        opacity=&quot;0.1&quot;/&gt;
+</code></pre>
+
+<p><svg width="500" height="50">
+    <circle cx="25" cy="25" r="20" fill="purple" stroke="green" stroke-width="10" opacity="0.9"></circle>
+    <circle cx="65" cy="25" r="20" fill="green" stroke="blue" stroke-width="10" opacity="0.5"></circle>
+    <circle cx="105" cy="25" r="20" fill="yellow" stroke="red" stroke-width="10" opacity="0.1"></circle>
+</svg></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="segue dark" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Walk Through Basic D3.js Usage</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>General Steps:</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul class = "build incremental">
+<li><h3>Create svg element, set up dimension</h3></li>
+<li><h3>Define the output range</h3></li>
+<li><h3>Get data</h3></li>
+<li><h3>Set input domain according to the data</h3></li>
+<li><h3>Enter the data</h3></li>
+<li><h3>Add axies</h3></li>
+<li><h3>More details such as text, grids etc.</h3></li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/html/scatter.html' width = '500px' height = '500px' seamless></iframe>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Define the layout</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="JavaScript">            //Width and height
+            var w = 500;
+            var h = 300;
+            var padding = 30;
+
+            //Create SVG element
+            var svg = d3.select(&quot;body&quot;)
+                        .append(&quot;svg&quot;)
+                        .attr(&quot;width&quot;, w)
+                        .attr(&quot;height&quot;, h);
+
+            //Create scale functions
+            var xScale = d3.scale.linear()
+                                 .range([padding, w - padding * 2]);
+            var yScale = d3.scale.linear()
+                                 .range([h - padding, padding]);
+            var rScale = d3.scale.linear()
+                                 .range([2, 5]);
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <blockquote>
+<p>&quot;Scales are functions that map from an input domain to an output range.&quot;</p>
+</blockquote>
+
+<p><img src='assets/img/scale.png'></img></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Get Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="JavaScript">//Dynamic, random dataset
+var dataset = [];                   //Initialize empty array
+var numDataPoints = 50;             //Number of dummy data points to create
+var xRange = Math.random() * 1000;  //Max range of new x values
+var yRange = Math.random() * 1000;  //Max range of new y values
+for (var i = 0; i &lt; numDataPoints; i++) {                   //Loop numDataPoints times
+    var newNumber1 = Math.round(Math.random() * xRange);    //New random integer
+    var newNumber2 = Math.round(Math.random() * yRange);    //New random integer
+    dataset.push([newNumber1, newNumber2]);                 //Add new number to array
+}
+</code></pre>
+
+<p>In web development, we can use <code>d3.json()</code> instead of <code>$.ajax()</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Enter the Data</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <pre><code class="JavaScript">//Set input domain
+xScale.domain([0, d3.max(dataset, 
+    function(d) { return d[0]; })]);
+
+yScale.domain([0, d3.max(dataset, 
+    function(d) { return d[1]; })]);
+
+rScale.domain([0, d3.max(dataset, 
+    function(d) { return d[1]; })]);
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <pre><code class="JavaScript">//Create circles
+svg.selectAll(&quot;circle&quot;)
+   .data(dataset)
+   .enter()
+   .append(&quot;circle&quot;)
+   .attr(&quot;cx&quot;, function(d) {
+        return xScale(d[0]);
+   })
+   .attr(&quot;cy&quot;, function(d) {
+        return yScale(d[1]);
+   })
+   .attr(&quot;r&quot;, function(d) {
+        return rScale(d[1]);
+   });
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <iframe src='assets/html/scatter_data.html' width = '900px' height = '500px' seamless></iframe>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Create Axises</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;'>
+  <pre><code class="JavaScript">//Define X axis
+var xAxis = d3.svg.axis().scale(xScale)
+                  .orient(&quot;bottom&quot;).ticks(5);
+//Define Y axis
+var yAxis = d3.svg.axis().scale(yScale)
+                  .orient(&quot;left&quot;).ticks(5);               
+//Create X axis
+svg.append(&quot;g&quot;)
+    .attr(&quot;class&quot;, &quot;axis&quot;)
+    .attr(&quot;transform&quot;, 
+        &quot;translate(0,&quot; + (h - padding) + &quot;)&quot;)
+    .call(xAxis);
+//Create Y axis
+svg.append(&quot;g&quot;)
+    .attr(&quot;class&quot;, &quot;axis&quot;)
+    .attr(&quot;transform&quot;, &quot;translate(&quot; + padding + &quot;,0)&quot;)
+    .call(yAxis);
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p>Add css style:</p>
+
+<pre><code class="CSS">&lt;style type=&quot;text/css&quot;&gt;
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+
+&lt;/style&gt;
+
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <iframe src='assets/html/scatter_axis.html' width = '900px' height = '500px' seamless></iframe>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="centrepre" id="slide-22">
+<hgroup>
+  <h2>Add labels</h2>
+</hgroup>
+<article class = 'flexbox vcenter'>
+<pre><code class="JavaScript">//Create labels
+svg.selectAll(&quot;text&quot;)
+   .data(dataset)
+   .enter()
+   .append(&quot;text&quot;)
+   .text(function(d) {
+        return d[0] + &quot;,&quot; + d[1];
+   })
+   .attr(&quot;x&quot;, function(d) {
+        return xScale(d[0]);
+   })
+   .attr(&quot;y&quot;, function(d) {
+        return yScale(d[1]);
+   })
+   .attr(&quot;font-family&quot;, &quot;sans-serif&quot;)
+   .attr(&quot;font-size&quot;, &quot;11px&quot;)
+   .attr(&quot;fill&quot;, function(d){
+        if(d[0] &lt; 150 || d[1] &gt; 150) 
+            return &quot;red&quot;; else return &quot;blue&quot;;});
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+<aside class="note">
+  <section>
+    <iframe src='assets/html/scatter_textLabel.html' width = '900px' height = '500px' seamless></iframe>
+
+  </section>
+</aside>
+</slide>
+<slide class="segue dark" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Advanced Layouts</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="bigger" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Here is a complete list of all D3 layouts:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Bundle  </p></li>
+<li><p>Chord  </p></li>
+<li><p>Cluster  </p></li>
+<li><p>Force  </p></li>
+<li><p>Histogram  </p></li>
+<li><p>Pack  </p></li>
+<li><p>Partition  </p></li>
+<li><p>Pie  </p></li>
+<li><p>Stack  </p></li>
+<li><p>Tree  </p></li>
+<li><p>Treemap  </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>pie</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/html/pie.html' width = '960px' height = '600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>stack</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/html/stacked_bar.html' width = '960px' height = '600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Geomapping</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/html/geo.html' width = '960px' height = '600px'></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>More Than Visualizing</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2><a href="https://github.com/mbostock/d3/wiki/Arrays">Array Manipulation</a></h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><code>Nest</code></h3>
+
+<pre><code class="JavaScript">var yields = [{yield: 27.00, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot;},
+              {yield: 48.87, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Waseca&quot;},
+              {yield: 27.43, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Morris&quot;}, ...]
+</code></pre>
+
+<p>To facilitate visualization, it may be useful to nest the elements first by year, and then by variety, as follows:</p>
+
+<pre><code class="JavaScript">var nest = d3.nest()
+    .key(function(d) { return d.year; })
+    .key(function(d) { return d.variety; })
+    .entries(yields);
+</code></pre>
+
+<p>More examples: <a href="http://bl.ocks.org/phoebebright/raw/3176159/">http://bl.ocks.org/phoebebright/raw/3176159/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p>This returns a nested array:</p>
+
+<pre><code>[{key: 1931, values: [
+   {key: &quot;Manchuria&quot;, values: [
+     {yield: 27.00, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;University Farm&quot;},
+     {yield: 48.87, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Waseca&quot;},
+     {yield: 27.43, variety: &quot;Manchuria&quot;, year: 1931, site: &quot;Morris&quot;}, ...]},
+   {key: &quot;Glabron&quot;, values: [
+     {yield: 43.07, variety: &quot;Glabron&quot;, year: 1931, site: &quot;University Farm&quot;},
+     {yield: 55.20, variety: &quot;Glabron&quot;, year: 1931, site: &quot;Waseca&quot;}, ...]}, ...]},
+ {key: 1932, values: ...}]
+</code></pre>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>d3.time</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><h3><a href="https://github.com/mbostock/d3/wiki/Time-Intervals#interval">Time Interval APIs</a> can be compared to Calendar Class in Java</h3></li>
+<li><h3><code>new Date(string)</code> doesn&#39;t work in IE and Firefox. Convert to d3.time using <code>d3.time.format().parse()</code> instead.</h3>
+
+<p><code>var date = d3.time.format(&quot;%Y-%m-%d %H:%M:%S&quot;).parse(&quot;2014-09-15 23:10:19&quot;);
+var date = d3.time.format(&quot;%Y-%m-%d %X&quot;).parse(&quot;2014-09-15 23:10:19&quot;);</code></p></li>
+<li><h3><code>d3.time.interval</code> includes <code>d3.time.day</code>, <code>d3.time.year</code>...</h3></li>
+<li><h3><code>interval.range(start, stop[, step])</code> returns every time interval after or equal to start and before stop.</h3></li>
+<li><h3><code>interval.offset(date, step)</code> returns a new date equal to date plus step intervals.</h3>
+
+<p>For example, if it is currently 5:34 PM, then <code>d3.time.day.offset(new Date(), 1)</code> returns 5:34 PM tomorrow</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <h3>Time Formatting</h3>
+
+<p><img src="assets/img/timeFormat.png"></img></p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Quiz</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>Which of the following statements is not true about D3.js?</p>
+
+<ol>
+<li>It is fully based on web standards.</li>
+<li>It is under open-source software liscence.</li>
+<li>It can be used as a substitute for jQuery.</li>
+<li>It provides a bunch of useful functions to manipulate data.</li>
+<li><em>Because of it can easily make graphs that are highly interactive, it is widely used in web games.</em></li>
+<li>It can handle large sets of data.</li>
+<li>It is not an easy tool to learn because of its flexibility and abundant functionalities.</li>
+<li>To use it well is a science of art.</li>
+<li>Its essence can be descirbed as dynamically linking data to SVG elements.</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>D3.js is uses vocabulary of CSS3, HTML5 and SVG.</p>
+
+</div>
+<div class="quiz-explanation">
+  <p>Canvas in Html5 is a better choice than SVG in designing web games because they generally need frequent re-drawing.</p>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>D3 Learning Resources</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <article data-timings="">
+    <ul>
+<li><h3>d3js.org</h3>
+
+<p>Your starting point for everything D3.</p></li>
+<li><h3>github.com/mbostock/d3/wiki/Gallery</h3>
+
+<p>The D3 gallery contains hundreds of examples. Add your own work!</p></li>
+<li><h3>bl.ocks.org/mbostock</h3>
+
+<p>Even more examples, in this case all by Mike Bostock, each one typically highlighting just one of D3’s features.</p></li>
+<li><h3>github.com/mbostock/d3/wiki/API-Reference</h3>
+
+<p>The D3 API reference, an essential reference for every method and its parameters.</p></li>
+<li><h3>stackoverflow.com/questions/tagged/d3.js</h3>
+
+<p>When you get stuck, post questions on StackOverflow with the d3.js tag.</p></li>
+<li><h3>groups.google.com/forum/?fromgroups#!forum/d3-js</h3>
+
+<p>Everyone who’s anyone is on the D3 Google Group. Find out about the latest projects and developments here. </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <article data-timings="">
+    <ul>
+<li><h3>bl.ocks.org</h3>
+
+<p>A service for posting code hosted on GitHub’s Gist, by Mike Bostock. Perfect for quickly sharing your work with others, such as when seeking help on StackOverflow or boasting about your latest triumph on the Google Group.</p></li>
+<li><h3>blog.visual.ly/creating-animations-and-transitions-with-d3-js/</h3>
+
+<p>An excellent tutorial on Creating Animations and Transitions With D3 with lots of inline, interactive examples by Jérôme Cukier.</p></li>
+<li><h3>d3noob.org</h3>
+
+<p>A new, promising resource for D3 tips and tricks.</p></li>
+<li><h3>tributary.io</h3>
+
+<p>A live-coding environment for experimenting with D3 code, by Ian Johnson.</p></li>
+<li><h3><a href="https://github.com/d3/d3-plugins">D3 Plug-ins</a></h3>
+
+<p>A listing of all the official plug-ins that extend D3’s functionality, in case it doesn’t do enough for you already.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='D3 Gallery'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Streamgraph'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Voronoi Tessellation'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Bubble Chart'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Using Canvas and SVG to draw'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Canvas Demo'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='SVG Demo'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Canvas V.S. SVG'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Basic SVG'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Elements'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Simple Shapes'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='line'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Styling SVG Elements'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Walk Through Basic D3.js Usage'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='General Steps:'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Define the layout'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Get Data'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Enter the Data'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Create Axises'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Add labels'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Advanced Layouts'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Here is a complete list of all D3 layouts:'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='pie'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='stack'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Geomapping'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='More Than Visualizing'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='<a href="https://github.com/mbostock/d3/wiki/Arrays">Array Manipulation</a>'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='d3.time'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Quiz'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='D3 Learning Resources'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title=''>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title=''>
+         34
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="./assets/js/smiley.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
